@@ -29,7 +29,7 @@ public class UserController {
         if(userService.findByUsername(user.getUsername()) != null){
             return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
-        user.setRole(Role.USER);
+        user.setRole(Role.User);
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
